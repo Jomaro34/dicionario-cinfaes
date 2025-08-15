@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dicionário de Cinfães</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #0077cc;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    header small {
+        display: block;
+        font-size: 0.8em;
+        margin-top: 5px;
+    }
+    #search-container {
+        margin: 20px;
+        text-align: center;
+    }
+    #search {
+        padding: 10px;
+        width: 80%;
+        max-width: 400px;
+        font-size: 1em;
+    }
+    #word-list {
+        margin: 20px auto;
+        max-width: 600px;
+        list-style: none;
+        padding: 0;
+    }
+    #word-list li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    #word-list li a {
+        text-decoration: none;
+        color: #0077cc;
+    }
+    mark {
+        background-color: yellow;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Dicionário de Cinfães</h1>
+    <small>© Jomaro Cabrela / José Rodrigues</small>
+</header>
+
+<div id="search-container">
+    <input type="text" id="search" placeholder="Pesquisar verbete...">
+</div>
+
+<ul id="word-list">
+    <li><a href="verbete/rio.html">Rio</a></li>
+    <li><a href="verbete/castelo.html">Castelo</a></li>
+    <li><a href="verbete/igreja.html">Igreja</a></li>
+    <li><a href="verbete/praça.html">Praça</a></li>
+</ul>
+
+<script>
+const searchInput = document.getElementById('search');
+const wordList = document.getElementById('word-list');
+const words = Array.from(wordList.getElementsByTagName('li'));
+
+// Ordenação alfabética
+words.sort((a, b) => a.textContent.localeCompare(b.textContent));
+words.forEach(li => wordList.appendChild(li));
+
+searchInput.addEventListener('input', () => {
+    const term = searchInput.value.toLowerCase();
+    words.forEach(li => {
+        const text = li.textContent.toLowerCase();
+        if(text.includes(term)){
+            li.style.display = '';
+            // Realce da palavra pesquisada
+            const regex = new RegExp(`(${term})`, 'gi');
+            li.innerHTML = li.textContent.replace(regex, '<mark>$1</mark>');
+        } else {
+            li.style.display = 'none';
+            li.innerHTML = li.textContent; // remove destaque
+        }
+    });
+});
+</script>
+
+</body>
+</html>
