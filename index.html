@@ -6,9 +6,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 style="text-align: center;">Dicion&aacute;rio de Cinf&atilde;es</h1>
-<p style="text-align: center;">&copy; Jomaro Cabrela / Jos&eacute; Rodrigues</p>
-<p style="text-align: center;"><input id="search" type="text" autofocus="" placeholder="Pesquisar palavra..." /></p>
+  <!-- Logo substitui o título -->
+  <div style="text-align: center;">
+    <img src="DCinfaes_nome.png" alt="Dicionário de Cinfães" style="max-width: 50%; height: auto;">
+  </div>
+
+  <!-- Foto e créditos -->
+  <div style="text-align: center; margin-top: 10px;">
+    <img src="JomaroCabrelaPB_LR.jpg" alt="Jomaro Cabrela" style="width: 50px; height: auto; border-radius: 8px;"><br>
+    <p>&copy; Jomaro Cabrela / José Rodrigues</p>
+  </div>
+
+  <!-- Link para o PDF -->
+  <p style="text-align: center;">
+    <a href="https://upload.wikimedia.org/wikipedia/commons/5/5c/Dicion%C3%A1rio_Cinf%C3%A3es_Vers%C3%A3o_3_Edi%C3%A7%C3%A3o_2024.pdf" target="_blank">
+      Link para o Dicionário de Cinfães em formato Livro - PDF
+    </a>
+  </p>
+
+  <!-- Caixa de pesquisa -->
+  <p style="text-align: center;">
+    <input id="search" type="text" autofocus placeholder="Pesquisar palavra..." />
+  </p>
   <div id="results"></div>
   <script src="script.js"></script>
 </body>
