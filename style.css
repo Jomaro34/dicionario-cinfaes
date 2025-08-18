@@ -1,9 +1,11 @@
 /* ===== Reset simples ===== */
-body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden; /* impede conteúdo a sair para o lado */
 }
 
 /* ===== Logo ===== */
@@ -60,4 +62,35 @@ body {
 .pdf-link {
   text-align: center;
   margin-top: 20px;
+}
+
+/* ===== Garantir que texto e links não saem do ecrã ===== */
+p, a, span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Ajustes específicos para telemóvel ===== */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;   /* reduz ligeiramente o texto */
+    padding: 0 10px;
+  }
+
+  .intro {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  #search {
+    font-size: 16px; /* mantém para evitar zoom automático */
+  }
+
+  .logo {
+    max-width: 80%; /* logo mais adaptável em ecrãs pequenos */
+  }
 }
