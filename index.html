@@ -11,6 +11,11 @@
     <img src="DCinfaes_nome.png" alt="Dicionário de Cinfães" style="max-width: 50%; height: auto;">
   </div>
 
+  <!-- Caixa de pesquisa -->
+  <p style="text-align: center;">
+    <input id="search" type="text" autofocus placeholder="Pesquisar palavra..." />
+  </p>
+
   <!-- Foto e créditos -->
   <div style="text-align: center; margin-top: 10px;">
     <img src="JomaroCabrelaPB_LR.jpg" alt="Jomaro Cabrela" style="width: 50px; height: auto; border-radius: 8px;"><br>
@@ -24,14 +29,30 @@
     </a>
   </p>
 
-  <!-- Caixa de pesquisa -->
-  <p style="text-align: center;">
-    <input id="search" type="text" autofocus placeholder="Pesquisar palavra..." />
-  </p>
+
+  
   <div id="results"></div>
 
 
-  
   <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Index com texto invisível</title>
+    <meta name="keywords" content="Jomaro Cabrela, José Rodrigies, Dicionário de Cinfães, dicionário de cinfaes, gírias, regionalismos" />
+    <style>
+      /* Esconde completamente o texto abaixo (não ocupa espaço) */
+      #texto-invisivel { display: none; }
+    </style>
+  </head>
+  <body>
+    <p style="text-align: center;" aria-hidden="true">&nbsp;</p>
+    <p class="p1" style="text-align: justify;">
+      <span class="s1">
+        O <em>Dicionário de Cinfães</em> é um projecto amador que recolhe e divulga palavras e expressões populares usadas em Cinfães, incluindo calão, termos depreciativos, figuras de linguagem, gírias e regionalismos. Embora muitas destas palavras existam noutras regiões, o objectivo é registar a sua presença na terra cinfanense.
+      </span>
+    </p>
+
+    <p id="texto-invisivel" aria-hidden="true">texto invisível para substituir</p>
+  </body>
 </html>
