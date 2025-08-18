@@ -1,45 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dicionário de Cinfães</title>
-  <meta name="keywords" content="Jomaro Cabrela, José Rodrigies, Dicionário de Cinfães, dicionário de cinfaes, gírias, regionalismos" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesquisa Responsiva</title>
+<style>
+    /* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        background-color: #f5f5f5;
+        padding: 20px; /* espaço geral no body */
+    }
+
+    .container {
+        max-width: 800px; /* largura máxima para desktop */
+        margin: 0 auto; /* centra horizontalmente */
+        background-color: #fff;
+        padding: 20px; /* espaço interno */
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    input[type="text"] {
+        width: 100%; /* ocupa toda a largura do container */
+        padding: 12px 15px; /* espaço interno para não encostar nas bordas */
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .resultado {
+        padding: 15px;
+        background-color: #eaeaea;
+        border-radius: 5px;
+        word-wrap: break-word; /* evita overflow de texto longo */
+    }
+
+    /* Responsivo para telas pequenas */
+    @media (max-width: 768px) {
+        body {
+            padding: 10px;
+        }
+
+        .container {
+            padding: 15px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+        }
+
+        .resultado {
+            padding: 10px;
+        }
+    }
+</style>
 </head>
 <body>
-  <!-- Logo substitui o título -->
-  <div class="logo-container">
-    <img src="DCinfaes_nome.png" alt="Dicionário de Cinfães" class="logo">
-  </div>
-
-  <!-- Caixa de pesquisa -->
-  <p class="search-container">
-    <input id="search" type="text" autofocus placeholder="Pesquisar palavra..." />
-  </p>
-
-  <div id="results"></div>
-
-  <p aria-hidden="true">&nbsp;</p>
-  <p class="intro">
-    O <em>Dicionário de Cinfães</em> é um projecto amador que recolhe e divulga palavras e expressões populares usadas em Cinfães, incluindo calão, termos depreciativos, figuras de linguagem, gírias e regionalismos. Embora muitas destas palavras existam noutras regiões, o objectivo é registar a sua presença na terra cinfanense.
-  </p>
-
-  <p id="texto-invisivel" aria-hidden="true">texto invisível para substituir</p>
-
-  <!-- Foto e créditos -->
-  <div class="credits">
-    <img src="JomaroCabrelaPB_LR.jpg" alt="Jomaro Cabrela" class="author-photo"><br>
-    <p>&copy; Jomaro Cabrela / José Rodrigues</p>
-  </div>
-
-  <!-- Link para o PDF -->
-  <p class="pdf-link">
-    <a href="https://upload.wikimedia.org/wikipedia/commons/5/5c/Dicion%C3%A1rio_Cinf%C3%A3es_Vers%C3%A3o_3_Edi%C3%A7%C3%A3o_2024.pdf" target="_blank">
-      Link para o Dicionário de Cinfães em formato Livro - PDF
-    </a>
-  </p>
-
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Pesquisa</h1>
+        <input type="text" placeholder="Escreve algo para pesquisar...">
+        <div class="resultado">
+            Aqui aparece o texto do resultado da pesquisa. Ele nunca encostará às bordas do ecrã, mesmo em telemóveis.
+        </div>
+    </div>
 </body>
 </html>
