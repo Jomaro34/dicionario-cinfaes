@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dicionário de Cinfães</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="keywords" content="Jomaro Cabrela, José Rodrigies, Dicionário de Cinfães, dicionário de cinfaes, gírias, regionalismos" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Estilos da caixa de pesquisa */
+    #search {
+      width: 100%;
+      max-width: 500px;
+      padding: 8px 12px;
+      font-size: 16px;       /* impede zoom no mobile */
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    #search:focus {
+      border-color: #007BFF;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Esconde completamente o texto abaixo (não ocupa espaço) */
+    #texto-invisivel {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <!-- Logo substitui o título -->
@@ -16,32 +41,18 @@
     <input id="search" type="text" autofocus placeholder="Pesquisar palavra..." />
   </p>
 
-  
   <div id="results"></div>
 
+  <p style="text-align: center;" aria-hidden="true">&nbsp;</p>
+  <p class="p1" style="text-align: justify;">
+    <span class="s1">
+      O <em>Dicionário de Cinfães</em> é um projecto amador que recolhe e divulga palavras e expressões populares usadas em Cinfães, incluindo calão, termos depreciativos, figuras de linguagem, gírias e regionalismos. Embora muitas destas palavras existam noutras regiões, o objectivo é registar a sua presença na terra cinfanense.
+    </span>
+  </p>
 
-  <script src="script.js"></script>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Index com texto invisível</title>
-    <meta name="keywords" content="Jomaro Cabrela, José Rodrigies, Dicionário de Cinfães, dicionário de cinfaes, gírias, regionalismos" />
-    <style>
-      /* Esconde completamente o texto abaixo (não ocupa espaço) */
-      #texto-invisivel { display: none; }
-    </style>
-  </head>
-  <body>
-    <p style="text-align: center;" aria-hidden="true">&nbsp;</p>
-    <p class="p1" style="text-align: justify;">
-      <span class="s1">
-        O <em>Dicionário de Cinfães</em> é um projecto amador que recolhe e divulga palavras e expressões populares usadas em Cinfães, incluindo calão, termos depreciativos, figuras de linguagem, gírias e regionalismos. Embora muitas destas palavras existam noutras regiões, o objectivo é registar a sua presença na terra cinfanense.
-      </span>
-    </p>
+  <p id="texto-invisivel" aria-hidden="true">texto invisível para substituir</p>
 
-    <p id="texto-invisivel" aria-hidden="true">texto invisível para substituir</p>
-
-      <!-- Foto e créditos -->
+  <!-- Foto e créditos -->
   <div style="text-align: center; margin-top: 10px;">
     <img src="JomaroCabrelaPB_LR.jpg" alt="Jomaro Cabrela" style="width: 50px; height: auto; border-radius: 8px;"><br>
     <p>&copy; Jomaro Cabrela / José Rodrigues</p>
@@ -53,5 +64,7 @@
       Link para o Dicionário de Cinfães em formato Livro - PDF
     </a>
   </p>
-  </body>
+
+  <script src="script.js"></script>
+</body>
 </html>
